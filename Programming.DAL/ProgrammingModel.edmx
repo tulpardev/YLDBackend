@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProgrammingDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Language" Type="varchar" MaxLength="50" />
+          <Property Name="Founder" Type="varchar" MaxLength="50" />
+          <Property Name="Year" Type="varchar" MaxLength="50" />
+          <Property Name="IsPopular" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MSG_PROD_COIL">
+          <Key>
+            <PropertyRef Name="MSG_COUNTER" />
+          </Key>
+          <Property Name="MSG_COUNTER" Type="int" Nullable="false" />
+          <Property Name="EX_COIL_ID" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="SCHEDULE_ID" Type="char" MaxLength="32" />
+          <Property Name="L3_OUTPUT_CNT" Type="int" Nullable="false" />
+          <Property Name="LAST_COIL_FLAG" Type="int" Nullable="false" />
+          <Property Name="PRODUCTION_BEGIN_DATE" Type="datetime" />
+          <Property Name="PRODUCTION_END_DATE" Type="datetime" />
+          <Property Name="PRODUCTION_SHIFT" Type="int" Nullable="false" />
+          <Property Name="PRODUCTION_CREW" Type="char" MaxLength="32" />
+          <Property Name="WIDTH" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="THICKNESS" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="MEASURED_LENGTH" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="MEASURED_WEIGHT" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="EX_EXT_DIAMETER" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="EX_INT_DIAMETER" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="EX_SPOOL_MODE" Type="int" Nullable="false" />
+          <Property Name="EN_STEEL_GRADE_ID" Type="char" MaxLength="32" />
+          <Property Name="EX_STEEL_GRADE_ID" Type="char" MaxLength="32" />
+          <Property Name="WELD_INSIDE_FLAG" Type="int" Nullable="false" />
+          <Property Name="EX_HEAD_SCRAP_LENGTH" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="EX_TAIL_SCRAP_LENGTH" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="EN_THICKNESS_AVG" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="EN_THICKNESS_MIN" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="EN_THICKNESS_MAX" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="EN_THICKNESS_SDD" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="PUNCHING_MODE" Type="int" Nullable="false" />
+          <Property Name="THERMAL_CYCLE" Type="int" Nullable="false" />
+          <Property Name="UPCOAT_WEIGHT" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="UPCOAT_WEIGHT_AVG" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="UPCOAT_WEIGHT_MIN" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="UPCOAT_WEIGHT_MAX" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="UPCOAT_WEIGHT_SDD" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="LOCOAT_WEIGHT" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="LOCOAT_WEIGHT_AVG" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="LOCOAT_WEIGHT_MIN" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="LOCOAT_WEIGHT_MAX" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="LOCOAT_WEIGHT_SDD" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="SKINPASS_MODE" Type="int" Nullable="false" />
+          <Property Name="SKINPASS_ELONG" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="LEVELER_MODE" Type="int" Nullable="false" />
+          <Property Name="LEVELER_ELONG" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="PASSIVATION_MODE" Type="int" Nullable="false" />
+          <Property Name="OILER_OIL_MODE" Type="int" Nullable="false" />
+          <Property Name="OILER_OIL_AMOUNT" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="COILING_TENSION_AVG" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="COILING_TENSION_MIN" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="COILING_TENSION_MAX" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="COILING_TENSION_SDD" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="STAGGERING_MODE" Type="int" Nullable="false" />
+          <Property Name="DESTINATION" Type="char" MaxLength="32" />
+          <Property Name="REMARK" Type="char" MaxLength="80" />
+          <Property Name="UNEXPECTED_CUT_FLAG" Type="int" Nullable="false" />
+          <Property Name="UNEXPECTED_CUT_REMARK" Type="char" MaxLength="80" />
+          <Property Name="OPERATOR" Type="char" MaxLength="32" />
+          <Property Name="REVISION" Type="datetime" />
+          <Property Name="EX_HEAD_SCRAP_WEIGHT" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="EX_TAIL_SCRAP_WEIGHT" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="ELECTRICAL_ENERGY" Type="int" Nullable="false" />
+          <Property Name="ACT_COIL_SPEED_RATIO" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="ACT_SHIFT_SPEED_RATIO" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="CALC_WEIGHT" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserKey" Type="uniqueidentifier" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Salt" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Role" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="ProgrammingDbModelStoreContainer">
+          <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MSG_PROD_COIL" EntityType="Self.MSG_PROD_COIL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProgrammingDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Founder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsPopular" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="ProgrammingDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Languages" EntityType="Self.Languages" />
+          <EntitySet Name="Users" EntityType="ProgrammingDbModel.Users" />
+          <EntitySet Name="MSG_PROD_COIL" EntityType="ProgrammingDbModel.MSG_PROD_COIL" />
+        </EntityContainer>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserKey" Type="Guid" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Salt" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MSG_PROD_COIL">
+          <Key>
+            <PropertyRef Name="MSG_COUNTER" />
+          </Key>
+          <Property Name="MSG_COUNTER" Type="Int32" Nullable="false" />
+          <Property Name="EX_COIL_ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="SCHEDULE_ID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="L3_OUTPUT_CNT" Type="Int32" Nullable="false" />
+          <Property Name="LAST_COIL_FLAG" Type="Int32" Nullable="false" />
+          <Property Name="PRODUCTION_BEGIN_DATE" Type="DateTime" Precision="3" />
+          <Property Name="PRODUCTION_END_DATE" Type="DateTime" Precision="3" />
+          <Property Name="PRODUCTION_SHIFT" Type="Int32" Nullable="false" />
+          <Property Name="PRODUCTION_CREW" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="WIDTH" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="THICKNESS" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="MEASURED_LENGTH" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="MEASURED_WEIGHT" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="EX_EXT_DIAMETER" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="EX_INT_DIAMETER" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="EX_SPOOL_MODE" Type="Int32" Nullable="false" />
+          <Property Name="EN_STEEL_GRADE_ID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="EX_STEEL_GRADE_ID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="WELD_INSIDE_FLAG" Type="Int32" Nullable="false" />
+          <Property Name="EX_HEAD_SCRAP_LENGTH" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="EX_TAIL_SCRAP_LENGTH" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="EN_THICKNESS_AVG" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="EN_THICKNESS_MIN" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="EN_THICKNESS_MAX" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="EN_THICKNESS_SDD" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="PUNCHING_MODE" Type="Int32" Nullable="false" />
+          <Property Name="THERMAL_CYCLE" Type="Int32" Nullable="false" />
+          <Property Name="UPCOAT_WEIGHT" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="UPCOAT_WEIGHT_AVG" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="UPCOAT_WEIGHT_MIN" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="UPCOAT_WEIGHT_MAX" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="UPCOAT_WEIGHT_SDD" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="LOCOAT_WEIGHT" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="LOCOAT_WEIGHT_AVG" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="LOCOAT_WEIGHT_MIN" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="LOCOAT_WEIGHT_MAX" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="LOCOAT_WEIGHT_SDD" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="SKINPASS_MODE" Type="Int32" Nullable="false" />
+          <Property Name="SKINPASS_ELONG" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="LEVELER_MODE" Type="Int32" Nullable="false" />
+          <Property Name="LEVELER_ELONG" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="PASSIVATION_MODE" Type="Int32" Nullable="false" />
+          <Property Name="OILER_OIL_MODE" Type="Int32" Nullable="false" />
+          <Property Name="OILER_OIL_AMOUNT" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="COILING_TENSION_AVG" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="COILING_TENSION_MIN" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="COILING_TENSION_MAX" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="COILING_TENSION_SDD" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="STAGGERING_MODE" Type="Int32" Nullable="false" />
+          <Property Name="DESTINATION" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="REMARK" Type="String" MaxLength="80" FixedLength="true" Unicode="false" />
+          <Property Name="UNEXPECTED_CUT_FLAG" Type="Int32" Nullable="false" />
+          <Property Name="UNEXPECTED_CUT_REMARK" Type="String" MaxLength="80" FixedLength="true" Unicode="false" />
+          <Property Name="OPERATOR" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="REVISION" Type="DateTime" Precision="3" />
+          <Property Name="EX_HEAD_SCRAP_WEIGHT" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="EX_TAIL_SCRAP_WEIGHT" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="ELECTRICAL_ENERGY" Type="Int32" Nullable="false" />
+          <Property Name="ACT_COIL_SPEED_RATIO" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="ACT_SHIFT_SPEED_RATIO" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="CALC_WEIGHT" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProgrammingDbModelStoreContainer" CdmEntityContainer="ProgrammingDbEntities">
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="ProgrammingDbModel.Languages">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Founder" ColumnName="Founder" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="IsPopular" ColumnName="IsPopular" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ProgrammingDbModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserKey" ColumnName="UserKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MSG_PROD_COIL">
+            <EntityTypeMapping TypeName="ProgrammingDbModel.MSG_PROD_COIL">
+              <MappingFragment StoreEntitySet="MSG_PROD_COIL">
+                <ScalarProperty Name="CALC_WEIGHT" ColumnName="CALC_WEIGHT" />
+                <ScalarProperty Name="ACT_SHIFT_SPEED_RATIO" ColumnName="ACT_SHIFT_SPEED_RATIO" />
+                <ScalarProperty Name="ACT_COIL_SPEED_RATIO" ColumnName="ACT_COIL_SPEED_RATIO" />
+                <ScalarProperty Name="ELECTRICAL_ENERGY" ColumnName="ELECTRICAL_ENERGY" />
+                <ScalarProperty Name="EX_TAIL_SCRAP_WEIGHT" ColumnName="EX_TAIL_SCRAP_WEIGHT" />
+                <ScalarProperty Name="EX_HEAD_SCRAP_WEIGHT" ColumnName="EX_HEAD_SCRAP_WEIGHT" />
+                <ScalarProperty Name="REVISION" ColumnName="REVISION" />
+                <ScalarProperty Name="OPERATOR" ColumnName="OPERATOR" />
+                <ScalarProperty Name="UNEXPECTED_CUT_REMARK" ColumnName="UNEXPECTED_CUT_REMARK" />
+                <ScalarProperty Name="UNEXPECTED_CUT_FLAG" ColumnName="UNEXPECTED_CUT_FLAG" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="DESTINATION" ColumnName="DESTINATION" />
+                <ScalarProperty Name="STAGGERING_MODE" ColumnName="STAGGERING_MODE" />
+                <ScalarProperty Name="COILING_TENSION_SDD" ColumnName="COILING_TENSION_SDD" />
+                <ScalarProperty Name="COILING_TENSION_MAX" ColumnName="COILING_TENSION_MAX" />
+                <ScalarProperty Name="COILING_TENSION_MIN" ColumnName="COILING_TENSION_MIN" />
+                <ScalarProperty Name="COILING_TENSION_AVG" ColumnName="COILING_TENSION_AVG" />
+                <ScalarProperty Name="OILER_OIL_AMOUNT" ColumnName="OILER_OIL_AMOUNT" />
+                <ScalarProperty Name="OILER_OIL_MODE" ColumnName="OILER_OIL_MODE" />
+                <ScalarProperty Name="PASSIVATION_MODE" ColumnName="PASSIVATION_MODE" />
+                <ScalarProperty Name="LEVELER_ELONG" ColumnName="LEVELER_ELONG" />
+                <ScalarProperty Name="LEVELER_MODE" ColumnName="LEVELER_MODE" />
+                <ScalarProperty Name="SKINPASS_ELONG" ColumnName="SKINPASS_ELONG" />
+                <ScalarProperty Name="SKINPASS_MODE" ColumnName="SKINPASS_MODE" />
+                <ScalarProperty Name="LOCOAT_WEIGHT_SDD" ColumnName="LOCOAT_WEIGHT_SDD" />
+                <ScalarProperty Name="LOCOAT_WEIGHT_MAX" ColumnName="LOCOAT_WEIGHT_MAX" />
+                <ScalarProperty Name="LOCOAT_WEIGHT_MIN" ColumnName="LOCOAT_WEIGHT_MIN" />
+                <ScalarProperty Name="LOCOAT_WEIGHT_AVG" ColumnName="LOCOAT_WEIGHT_AVG" />
+                <ScalarProperty Name="LOCOAT_WEIGHT" ColumnName="LOCOAT_WEIGHT" />
+                <ScalarProperty Name="UPCOAT_WEIGHT_SDD" ColumnName="UPCOAT_WEIGHT_SDD" />
+                <ScalarProperty Name="UPCOAT_WEIGHT_MAX" ColumnName="UPCOAT_WEIGHT_MAX" />
+                <ScalarProperty Name="UPCOAT_WEIGHT_MIN" ColumnName="UPCOAT_WEIGHT_MIN" />
+                <ScalarProperty Name="UPCOAT_WEIGHT_AVG" ColumnName="UPCOAT_WEIGHT_AVG" />
+                <ScalarProperty Name="UPCOAT_WEIGHT" ColumnName="UPCOAT_WEIGHT" />
+                <ScalarProperty Name="THERMAL_CYCLE" ColumnName="THERMAL_CYCLE" />
+                <ScalarProperty Name="PUNCHING_MODE" ColumnName="PUNCHING_MODE" />
+                <ScalarProperty Name="EN_THICKNESS_SDD" ColumnName="EN_THICKNESS_SDD" />
+                <ScalarProperty Name="EN_THICKNESS_MAX" ColumnName="EN_THICKNESS_MAX" />
+                <ScalarProperty Name="EN_THICKNESS_MIN" ColumnName="EN_THICKNESS_MIN" />
+                <ScalarProperty Name="EN_THICKNESS_AVG" ColumnName="EN_THICKNESS_AVG" />
+                <ScalarProperty Name="EX_TAIL_SCRAP_LENGTH" ColumnName="EX_TAIL_SCRAP_LENGTH" />
+                <ScalarProperty Name="EX_HEAD_SCRAP_LENGTH" ColumnName="EX_HEAD_SCRAP_LENGTH" />
+                <ScalarProperty Name="WELD_INSIDE_FLAG" ColumnName="WELD_INSIDE_FLAG" />
+                <ScalarProperty Name="EX_STEEL_GRADE_ID" ColumnName="EX_STEEL_GRADE_ID" />
+                <ScalarProperty Name="EN_STEEL_GRADE_ID" ColumnName="EN_STEEL_GRADE_ID" />
+                <ScalarProperty Name="EX_SPOOL_MODE" ColumnName="EX_SPOOL_MODE" />
+                <ScalarProperty Name="EX_INT_DIAMETER" ColumnName="EX_INT_DIAMETER" />
+                <ScalarProperty Name="EX_EXT_DIAMETER" ColumnName="EX_EXT_DIAMETER" />
+                <ScalarProperty Name="MEASURED_WEIGHT" ColumnName="MEASURED_WEIGHT" />
+                <ScalarProperty Name="MEASURED_LENGTH" ColumnName="MEASURED_LENGTH" />
+                <ScalarProperty Name="THICKNESS" ColumnName="THICKNESS" />
+                <ScalarProperty Name="WIDTH" ColumnName="WIDTH" />
+                <ScalarProperty Name="PRODUCTION_CREW" ColumnName="PRODUCTION_CREW" />
+                <ScalarProperty Name="PRODUCTION_SHIFT" ColumnName="PRODUCTION_SHIFT" />
+                <ScalarProperty Name="PRODUCTION_END_DATE" ColumnName="PRODUCTION_END_DATE" />
+                <ScalarProperty Name="PRODUCTION_BEGIN_DATE" ColumnName="PRODUCTION_BEGIN_DATE" />
+                <ScalarProperty Name="LAST_COIL_FLAG" ColumnName="LAST_COIL_FLAG" />
+                <ScalarProperty Name="L3_OUTPUT_CNT" ColumnName="L3_OUTPUT_CNT" />
+                <ScalarProperty Name="SCHEDULE_ID" ColumnName="SCHEDULE_ID" />
+                <ScalarProperty Name="EX_COIL_ID" ColumnName="EX_COIL_ID" />
+                <ScalarProperty Name="MSG_COUNTER" ColumnName="MSG_COUNTER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
