@@ -19,7 +19,7 @@ namespace Programming.API
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "{action}/api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                defaults: new { id = RouteParameter.Optional}
             );
 
             config.Formatters.JsonFormatter.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;

@@ -28,5 +28,6 @@ namespace Programming.DAL
         public virtual DbSet<Languages> Languages { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<MSG_PROD_COIL> MSG_PROD_COIL { get; set; }
+        public virtual DbSet<FPL_INPUT_COIL> FPL_INPUT_COIL { get; set; }
     }
 }

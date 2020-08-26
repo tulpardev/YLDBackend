@@ -12,7 +12,7 @@ namespace Programming.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class MSG_PROD_COIL
+    public class MSG_PROD_COIL
     {
         public int MSG_COUNTER { get; set; }
         public string EX_COIL_ID { get; set; }
