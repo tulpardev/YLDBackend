@@ -36,6 +36,10 @@ namespace Programming.DAL.Utilities
                 {
                     throw new Exception();
                 }
+                if (item.Value == "")
+                {
+                    continue;
+                }
                 left = Expression.Property(param, item.Category);
                 right = Expression.Convert(ToExprConstant(property, item.Value), property.PropertyType);
 

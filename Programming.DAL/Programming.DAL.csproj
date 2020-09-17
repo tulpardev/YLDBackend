@@ -65,6 +65,7 @@
       <DependentUpon>ProgrammingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LanguagesDAL.cs" />
+    <Compile Include="Models\Pagination.cs" />
     <Compile Include="MSG_PROD_COIL.cs">
       <DependentUpon>ProgrammingModel.tt</DependentUpon>
     </Compile>

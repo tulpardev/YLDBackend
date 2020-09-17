@@ -9,8 +9,8 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Newtonsoft.Json;
-using Programming.API.Models;
 using Programming.DAL;
+using Programming.DAL.Models;
 using Programming.DAL.Utilities;
 using static Programming.DAL.Utilities.ExpressionFilter;
 
@@ -97,7 +97,7 @@ namespace Programming.API.Controllers
         [Route("homepage/api/MSG_PROD_COIL")]
         public IHttpActionResult GetProducedCoilByFilter(Pagination pagination)
         {
-            var item = producedCoilDAL.GetProducedCoilWithFilter(pagination.FilterQuery);
+            var item = producedCoilDAL.GetProducedCoilWithFilter(pagination);
             return Ok(item);
         }
 

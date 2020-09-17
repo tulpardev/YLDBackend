@@ -103,7 +103,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LoginCheck.cs" />
-    <Compile Include="Models\Pagination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\ApiAuthorizeAttribute.cs" />
     <Compile Include="Security\ApiKeyHandler.cs" />
@@ -119,7 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Programming.DAL\Programming.DAL.csproj">

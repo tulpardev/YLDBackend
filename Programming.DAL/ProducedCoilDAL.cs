@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Reflection;
 using System.ComponentModel;
 using Programming.DAL.Utilities;
+using Programming.DAL.Models;
 
 namespace Programming.DAL
 {
@@ -76,28 +77,19 @@ namespace Programming.DAL
             return db.MSG_PROD_COIL.Any(x => x.MSG_COUNTER == id);
         }
 
-        private static readonly List<MSG_PROD_COIL_FIELDS> userData = UserDataSeed();
-   
-
-        public IEnumerable<MSG_PROD_COIL> GetProducedCoilWithFilter(string filterQuery)
+        public IEnumerable<MSG_PROD_COIL> GetProducedCoilWithFilter(Pagination pagination)
         {
             var ef = new ExpressionFilter();
-            var query = ef.GetDynamicQueryWithExpresionTrees<MSG_PROD_COIL>(filterQuery);
-            var table = db.MSG_PROD_COIL.ToList().Where(query);
-            return table;
-        }
-
-
-        private static List<MSG_PROD_COIL_FIELDS> UserDataSeed()
-        {
-            return new List<MSG_PROD_COIL_FIELDS>
+            var query = ef.GetDynamicQueryWithExpresionTrees<MSG_PROD_COIL>(pagination.FilterQuery);
+            var data = db.MSG_PROD_COIL.ToList().Select(q =>
             {
-                new MSG_PROD_COIL_FIELDS{ EX_COIL_ID = "20080093GA", SCHEDULE_ID = "TESTJOB", EN_STEEL_GRADE_ID = "10"},
-                new MSG_PROD_COIL_FIELDS{ EX_COIL_ID = "20080093GA", SCHEDULE_ID = "TESTJOB", EN_STEEL_GRADE_ID = "20"},
-                new MSG_PROD_COIL_FIELDS{ EX_COIL_ID = "20080093GA", SCHEDULE_ID = "TESTJOB", EN_STEEL_GRADE_ID = "30"},
-                new MSG_PROD_COIL_FIELDS{ EX_COIL_ID = "20080093GA", SCHEDULE_ID = "TESTJOB", EN_STEEL_GRADE_ID = "40"},
-                new MSG_PROD_COIL_FIELDS{ EX_COIL_ID = "20080093GA", SCHEDULE_ID = "TESTJOB", EN_STEEL_GRADE_ID = "50"}
-            };
+                q.EX_COIL_ID = q.EX_COIL_ID.Trim();
+                q.SCHEDULE_ID = q.SCHEDULE_ID.Trim();
+                return q;
+            });
+            var filteredData = data.AsQueryable().Where(query).OrderByDescending(x => x.MSG_COUNTER).Skip(pagination.PageSize * pagination.PageCount).Take(pagination.PageSize).ToList();
+
+            return filteredData;
         }
     }
 }
