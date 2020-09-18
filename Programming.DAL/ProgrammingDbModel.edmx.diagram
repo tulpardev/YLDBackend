@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c6a15f6c2afc480c8dce7821c4734b9c" Name="Diagram1">
+      <Diagram DiagramId="c01a337df20246c9b021d8e0fb45e0e7" Name="Diagram1">
         <EntityTypeShape EntityType="ProgrammingDbModel.Languages" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProgrammingDbModel.Users" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="ProgrammingDbModel.MSG_PROD_COIL" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ProgrammingDbModel.MSG_PROD_COIL" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgrammingDbModel.Users" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

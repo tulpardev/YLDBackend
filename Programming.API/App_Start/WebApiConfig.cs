@@ -15,11 +15,11 @@ namespace Programming.API
             // Web API routes
             config.MapHttpAttributeRoutes();
             config.Filters.Add(new ApiExceptionAttribute());
-            config.MessageHandlers.Add(new ApiKeyHandler());
+            //config.MessageHandlers.Add(new ApiKeyHandler());
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "{action}/api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                defaults: new { id = RouteParameter.Optional , action = RouteParameter.Optional }
             );
 
             config.Formatters.JsonFormatter.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
