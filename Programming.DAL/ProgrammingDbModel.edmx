@@ -5,6 +5,102 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ProgrammingDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FPL_INPUT_COIL">
+          <Key>
+            <PropertyRef Name="COIL_NO" />
+          </Key>
+          <Property Name="COIL_NO" Type="int" Nullable="false" />
+          <Property Name="JOB_ID" Type="char" MaxLength="32" />
+          <Property Name="COIL_ID" Type="char" MaxLength="32" />
+          <Property Name="COIL_SEQ" Type="int" Nullable="false" />
+          <Property Name="COMBINATION_ID" Type="char" MaxLength="32" />
+          <Property Name="HEAT_ID" Type="char" MaxLength="32" />
+          <Property Name="LOT_ID" Type="char" MaxLength="32" />
+          <Property Name="COIL_CODE" Type="char" MaxLength="32" />
+          <Property Name="LEVEL3_ID" Type="char" MaxLength="32" />
+          <Property Name="HEAT_DATE" Type="datetime" />
+          <Property Name="WIDTH" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="AIMING_WIDTH" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="ACTUAL_WIDTH" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="THICKNESS" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="AIMING_THICKNESS" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="ACTUAL_THICKNESS" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="LENGTH" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="WEIGHT" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="EXTERNAL_DIAMETER" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="INTERNAL_DIAMETER" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="DOWNCOIL_TEMPERATURE" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="MATERIAL_GRADE_ID" Type="char" MaxLength="32" />
+          <Property Name="YIELD_STRENGTH" Type="int" Nullable="false" />
+          <Property Name="TENSILE_STRENGTH" Type="int" Nullable="false" />
+          <Property Name="ELONGATION" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="ALLOY_CODE" Type="int" Nullable="false" />
+          <Property Name="TREATMENT_CODE" Type="char" MaxLength="32" />
+          <Property Name="HEAD_CUT_MODE" Type="int" Nullable="false" />
+          <Property Name="MIN_HEAD_SCRAP_LENGTH" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="MIN_HEAD_SCRAP_THK" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="MAX_HEAD_SCRAP_THK" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="TAIL_CUT_MODE" Type="int" Nullable="false" />
+          <Property Name="MIN_TAIL_SCRAP_LENGTH" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="MIN_TAIL_SCRAP_THK" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="MAX_TAIL_SCRAP_THK" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="ENTRY_CROWN" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="SOURCE" Type="char" MaxLength="32" />
+          <Property Name="SOURCE_CODE_ID" Type="int" />
+          <Property Name="DEFECTS_NUM" Type="int" Nullable="false" />
+          <Property Name="SADDLE_NUM" Type="int" Nullable="false" />
+          <Property Name="SPOOL_MODE" Type="int" Nullable="false" />
+          <Property Name="SEPARATOR_MODE" Type="int" Nullable="false" />
+          <Property Name="UNCOIL_DIRECTION" Type="int" Nullable="false" />
+          <Property Name="ORDER_DUE_DATE" Type="datetime" />
+          <Property Name="CHANGE_SEQ_REASON" Type="int" Nullable="false" />
+          <Property Name="CHANGE_SEQ_COUNT" Type="int" Nullable="false" />
+          <Property Name="INFO_DESCRIPTION" Type="char" MaxLength="80" />
+          <Property Name="INFO_PRODUCT" Type="char" MaxLength="32" />
+          <Property Name="INFO_PRODUCTION_CODE" Type="int" />
+          <Property Name="INFO_SAMPLE" Type="char" MaxLength="80" />
+          <Property Name="ROLLING_COUNT" Type="int" Nullable="false" />
+          <Property Name="ROLLING_TYPE" Type="int" Nullable="false" />
+          <Property Name="REWORK_COIL_FLAG" Type="int" Nullable="false" />
+          <Property Name="REWORK_COIL_TYPE" Type="char" MaxLength="32" />
+          <Property Name="STORAGE_LOCATION" Type="char" MaxLength="32" />
+          <Property Name="STORAGE_STATUS" Type="int" Nullable="false" />
+          <Property Name="STORAGE_DESTINATION" Type="char" MaxLength="32" />
+          <Property Name="ANNEALING_THICKNESS" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="OPER_CODE" Type="char" MaxLength="32" />
+          <Property Name="OPER_EN_WIDTH" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="OPER_EN_THICKNESS" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="SUPPLIER_ID" Type="char" MaxLength="32" />
+          <Property Name="PDI_ERROR_FLAG" Type="int" Nullable="false" />
+          <Property Name="DUMMY_COIL_FLAG" Type="int" Nullable="false" />
+          <Property Name="REPAIR_FLAG" Type="int" Nullable="false" />
+          <Property Name="REPAIR_TYPE" Type="char" MaxLength="32" />
+          <Property Name="INSPECTION_CODE" Type="char" MaxLength="32" />
+          <Property Name="INSPECTION_GRADE" Type="char" MaxLength="32" />
+          <Property Name="OPERATION_CODE" Type="int" Nullable="false" />
+          <Property Name="OPERATION_NAME" Type="char" MaxLength="32" />
+          <Property Name="CREATION_DATE" Type="datetime" />
+          <Property Name="L3_COMBINATION_ID" Type="char" MaxLength="32" />
+          <Property Name="SEQ_IN_COMBINATION" Type="int" Nullable="false" />
+          <Property Name="COMBINATION_FLAG" Type="int" Nullable="false" />
+          <Property Name="STATUS" Type="int" Nullable="false" />
+          <Property Name="REMARK" Type="char" MaxLength="256" />
+          <Property Name="OPERATOR" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="REVISION" Type="datetime" />
+          <Property Name="DUMMY_COIL_COUNT" Type="int" Nullable="false" />
+          <Property Name="SPOOL_THICKNESS" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="MAX_ENTRY_TENS" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="MATERIAL_QUALITY" Type="char" MaxLength="32" />
+          <Property Name="FINISHED_PRODUCT" Type="int" Nullable="false" />
+          <Property Name="FINAL_PRODUCT_CODE" Type="char" MaxLength="32" />
+          <Property Name="FINAL_PRODUCT_QUALITY" Type="char" MaxLength="32" />
+          <Property Name="REJECTED_COIL_COUNT" Type="int" Nullable="false" />
+          <Property Name="LABEL_REMARK" Type="char" MaxLength="256" />
+          <Property Name="COILING_TENSION" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="ALLOY_FACTOR" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="ACTUAL_WR_FAMILY_NO" Type="int" Nullable="false" />
+          <Property Name="TARGET_ROUGHNESS" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+        </EntityType>
         <EntityType Name="Languages">
           <Key>
             <PropertyRef Name="ID" />
@@ -93,6 +189,7 @@
           <Property Name="Role" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="ProgrammingDbModelStoreContainer">
+          <EntitySet Name="FPL_INPUT_COIL" EntityType="Self.FPL_INPUT_COIL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MSG_PROD_COIL" EntityType="Self.MSG_PROD_COIL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -192,7 +289,104 @@
           <EntitySet Name="Languages" EntityType="Self.Languages" />
           <EntitySet Name="MSG_PROD_COIL" EntityType="Self.MSG_PROD_COIL" />
           <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="FPL_INPUT_COIL" EntityType="ProgrammingDbModel.FPL_INPUT_COIL" />
         </EntityContainer>
+        <EntityType Name="FPL_INPUT_COIL">
+          <Key>
+            <PropertyRef Name="COIL_NO" />
+          </Key>
+          <Property Name="COIL_NO" Type="Int32" Nullable="false" />
+          <Property Name="JOB_ID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="COIL_ID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="COIL_SEQ" Type="Int32" Nullable="false" />
+          <Property Name="COMBINATION_ID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="HEAT_ID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="LOT_ID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="COIL_CODE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="LEVEL3_ID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="HEAT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="WIDTH" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="AIMING_WIDTH" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="ACTUAL_WIDTH" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="THICKNESS" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="AIMING_THICKNESS" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="ACTUAL_THICKNESS" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="LENGTH" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="WEIGHT" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="EXTERNAL_DIAMETER" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="INTERNAL_DIAMETER" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="DOWNCOIL_TEMPERATURE" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="MATERIAL_GRADE_ID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="YIELD_STRENGTH" Type="Int32" Nullable="false" />
+          <Property Name="TENSILE_STRENGTH" Type="Int32" Nullable="false" />
+          <Property Name="ELONGATION" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="ALLOY_CODE" Type="Int32" Nullable="false" />
+          <Property Name="TREATMENT_CODE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="HEAD_CUT_MODE" Type="Int32" Nullable="false" />
+          <Property Name="MIN_HEAD_SCRAP_LENGTH" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="MIN_HEAD_SCRAP_THK" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="MAX_HEAD_SCRAP_THK" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="TAIL_CUT_MODE" Type="Int32" Nullable="false" />
+          <Property Name="MIN_TAIL_SCRAP_LENGTH" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="MIN_TAIL_SCRAP_THK" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="MAX_TAIL_SCRAP_THK" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="ENTRY_CROWN" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="SOURCE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="SOURCE_CODE_ID" Type="Int32" />
+          <Property Name="DEFECTS_NUM" Type="Int32" Nullable="false" />
+          <Property Name="SADDLE_NUM" Type="Int32" Nullable="false" />
+          <Property Name="SPOOL_MODE" Type="Int32" Nullable="false" />
+          <Property Name="SEPARATOR_MODE" Type="Int32" Nullable="false" />
+          <Property Name="UNCOIL_DIRECTION" Type="Int32" Nullable="false" />
+          <Property Name="ORDER_DUE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CHANGE_SEQ_REASON" Type="Int32" Nullable="false" />
+          <Property Name="CHANGE_SEQ_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="INFO_DESCRIPTION" Type="String" MaxLength="80" FixedLength="true" Unicode="false" />
+          <Property Name="INFO_PRODUCT" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="INFO_PRODUCTION_CODE" Type="Int32" />
+          <Property Name="INFO_SAMPLE" Type="String" MaxLength="80" FixedLength="true" Unicode="false" />
+          <Property Name="ROLLING_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="ROLLING_TYPE" Type="Int32" Nullable="false" />
+          <Property Name="REWORK_COIL_FLAG" Type="Int32" Nullable="false" />
+          <Property Name="REWORK_COIL_TYPE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="STORAGE_LOCATION" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="STORAGE_STATUS" Type="Int32" Nullable="false" />
+          <Property Name="STORAGE_DESTINATION" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="ANNEALING_THICKNESS" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="OPER_CODE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="OPER_EN_WIDTH" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="OPER_EN_THICKNESS" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="SUPPLIER_ID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="PDI_ERROR_FLAG" Type="Int32" Nullable="false" />
+          <Property Name="DUMMY_COIL_FLAG" Type="Int32" Nullable="false" />
+          <Property Name="REPAIR_FLAG" Type="Int32" Nullable="false" />
+          <Property Name="REPAIR_TYPE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="INSPECTION_CODE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="INSPECTION_GRADE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="OPERATION_CODE" Type="Int32" Nullable="false" />
+          <Property Name="OPERATION_NAME" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="3" />
+          <Property Name="L3_COMBINATION_ID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="SEQ_IN_COMBINATION" Type="Int32" Nullable="false" />
+          <Property Name="COMBINATION_FLAG" Type="Int32" Nullable="false" />
+          <Property Name="STATUS" Type="Int32" Nullable="false" />
+          <Property Name="REMARK" Type="String" MaxLength="256" FixedLength="true" Unicode="false" />
+          <Property Name="OPERATOR" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="REVISION" Type="DateTime" Precision="3" />
+          <Property Name="DUMMY_COIL_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="SPOOL_THICKNESS" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="MAX_ENTRY_TENS" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="MATERIAL_QUALITY" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="FINISHED_PRODUCT" Type="Int32" Nullable="false" />
+          <Property Name="FINAL_PRODUCT_CODE" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="FINAL_PRODUCT_QUALITY" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="REJECTED_COIL_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="LABEL_REMARK" Type="String" MaxLength="256" FixedLength="true" Unicode="false" />
+          <Property Name="COILING_TENSION" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="ALLOY_FACTOR" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="ACTUAL_WR_FAMILY_NO" Type="Int32" Nullable="false" />
+          <Property Name="TARGET_ROUGHNESS" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -286,6 +480,103 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Salt" ColumnName="Salt" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FPL_INPUT_COIL">
+            <EntityTypeMapping TypeName="ProgrammingDbModel.FPL_INPUT_COIL">
+              <MappingFragment StoreEntitySet="FPL_INPUT_COIL">
+                <ScalarProperty Name="TARGET_ROUGHNESS" ColumnName="TARGET_ROUGHNESS" />
+                <ScalarProperty Name="ACTUAL_WR_FAMILY_NO" ColumnName="ACTUAL_WR_FAMILY_NO" />
+                <ScalarProperty Name="ALLOY_FACTOR" ColumnName="ALLOY_FACTOR" />
+                <ScalarProperty Name="COILING_TENSION" ColumnName="COILING_TENSION" />
+                <ScalarProperty Name="LABEL_REMARK" ColumnName="LABEL_REMARK" />
+                <ScalarProperty Name="REJECTED_COIL_COUNT" ColumnName="REJECTED_COIL_COUNT" />
+                <ScalarProperty Name="FINAL_PRODUCT_QUALITY" ColumnName="FINAL_PRODUCT_QUALITY" />
+                <ScalarProperty Name="FINAL_PRODUCT_CODE" ColumnName="FINAL_PRODUCT_CODE" />
+                <ScalarProperty Name="FINISHED_PRODUCT" ColumnName="FINISHED_PRODUCT" />
+                <ScalarProperty Name="MATERIAL_QUALITY" ColumnName="MATERIAL_QUALITY" />
+                <ScalarProperty Name="MAX_ENTRY_TENS" ColumnName="MAX_ENTRY_TENS" />
+                <ScalarProperty Name="SPOOL_THICKNESS" ColumnName="SPOOL_THICKNESS" />
+                <ScalarProperty Name="DUMMY_COIL_COUNT" ColumnName="DUMMY_COIL_COUNT" />
+                <ScalarProperty Name="REVISION" ColumnName="REVISION" />
+                <ScalarProperty Name="OPERATOR" ColumnName="OPERATOR" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="COMBINATION_FLAG" ColumnName="COMBINATION_FLAG" />
+                <ScalarProperty Name="SEQ_IN_COMBINATION" ColumnName="SEQ_IN_COMBINATION" />
+                <ScalarProperty Name="L3_COMBINATION_ID" ColumnName="L3_COMBINATION_ID" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="OPERATION_NAME" ColumnName="OPERATION_NAME" />
+                <ScalarProperty Name="OPERATION_CODE" ColumnName="OPERATION_CODE" />
+                <ScalarProperty Name="INSPECTION_GRADE" ColumnName="INSPECTION_GRADE" />
+                <ScalarProperty Name="INSPECTION_CODE" ColumnName="INSPECTION_CODE" />
+                <ScalarProperty Name="REPAIR_TYPE" ColumnName="REPAIR_TYPE" />
+                <ScalarProperty Name="REPAIR_FLAG" ColumnName="REPAIR_FLAG" />
+                <ScalarProperty Name="DUMMY_COIL_FLAG" ColumnName="DUMMY_COIL_FLAG" />
+                <ScalarProperty Name="PDI_ERROR_FLAG" ColumnName="PDI_ERROR_FLAG" />
+                <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+                <ScalarProperty Name="OPER_EN_THICKNESS" ColumnName="OPER_EN_THICKNESS" />
+                <ScalarProperty Name="OPER_EN_WIDTH" ColumnName="OPER_EN_WIDTH" />
+                <ScalarProperty Name="OPER_CODE" ColumnName="OPER_CODE" />
+                <ScalarProperty Name="ANNEALING_THICKNESS" ColumnName="ANNEALING_THICKNESS" />
+                <ScalarProperty Name="STORAGE_DESTINATION" ColumnName="STORAGE_DESTINATION" />
+                <ScalarProperty Name="STORAGE_STATUS" ColumnName="STORAGE_STATUS" />
+                <ScalarProperty Name="STORAGE_LOCATION" ColumnName="STORAGE_LOCATION" />
+                <ScalarProperty Name="REWORK_COIL_TYPE" ColumnName="REWORK_COIL_TYPE" />
+                <ScalarProperty Name="REWORK_COIL_FLAG" ColumnName="REWORK_COIL_FLAG" />
+                <ScalarProperty Name="ROLLING_TYPE" ColumnName="ROLLING_TYPE" />
+                <ScalarProperty Name="ROLLING_COUNT" ColumnName="ROLLING_COUNT" />
+                <ScalarProperty Name="INFO_SAMPLE" ColumnName="INFO_SAMPLE" />
+                <ScalarProperty Name="INFO_PRODUCTION_CODE" ColumnName="INFO_PRODUCTION_CODE" />
+                <ScalarProperty Name="INFO_PRODUCT" ColumnName="INFO_PRODUCT" />
+                <ScalarProperty Name="INFO_DESCRIPTION" ColumnName="INFO_DESCRIPTION" />
+                <ScalarProperty Name="CHANGE_SEQ_COUNT" ColumnName="CHANGE_SEQ_COUNT" />
+                <ScalarProperty Name="CHANGE_SEQ_REASON" ColumnName="CHANGE_SEQ_REASON" />
+                <ScalarProperty Name="ORDER_DUE_DATE" ColumnName="ORDER_DUE_DATE" />
+                <ScalarProperty Name="UNCOIL_DIRECTION" ColumnName="UNCOIL_DIRECTION" />
+                <ScalarProperty Name="SEPARATOR_MODE" ColumnName="SEPARATOR_MODE" />
+                <ScalarProperty Name="SPOOL_MODE" ColumnName="SPOOL_MODE" />
+                <ScalarProperty Name="SADDLE_NUM" ColumnName="SADDLE_NUM" />
+                <ScalarProperty Name="DEFECTS_NUM" ColumnName="DEFECTS_NUM" />
+                <ScalarProperty Name="SOURCE_CODE_ID" ColumnName="SOURCE_CODE_ID" />
+                <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+                <ScalarProperty Name="ENTRY_CROWN" ColumnName="ENTRY_CROWN" />
+                <ScalarProperty Name="MAX_TAIL_SCRAP_THK" ColumnName="MAX_TAIL_SCRAP_THK" />
+                <ScalarProperty Name="MIN_TAIL_SCRAP_THK" ColumnName="MIN_TAIL_SCRAP_THK" />
+                <ScalarProperty Name="MIN_TAIL_SCRAP_LENGTH" ColumnName="MIN_TAIL_SCRAP_LENGTH" />
+                <ScalarProperty Name="TAIL_CUT_MODE" ColumnName="TAIL_CUT_MODE" />
+                <ScalarProperty Name="MAX_HEAD_SCRAP_THK" ColumnName="MAX_HEAD_SCRAP_THK" />
+                <ScalarProperty Name="MIN_HEAD_SCRAP_THK" ColumnName="MIN_HEAD_SCRAP_THK" />
+                <ScalarProperty Name="MIN_HEAD_SCRAP_LENGTH" ColumnName="MIN_HEAD_SCRAP_LENGTH" />
+                <ScalarProperty Name="HEAD_CUT_MODE" ColumnName="HEAD_CUT_MODE" />
+                <ScalarProperty Name="TREATMENT_CODE" ColumnName="TREATMENT_CODE" />
+                <ScalarProperty Name="ALLOY_CODE" ColumnName="ALLOY_CODE" />
+                <ScalarProperty Name="ELONGATION" ColumnName="ELONGATION" />
+                <ScalarProperty Name="TENSILE_STRENGTH" ColumnName="TENSILE_STRENGTH" />
+                <ScalarProperty Name="YIELD_STRENGTH" ColumnName="YIELD_STRENGTH" />
+                <ScalarProperty Name="MATERIAL_GRADE_ID" ColumnName="MATERIAL_GRADE_ID" />
+                <ScalarProperty Name="DOWNCOIL_TEMPERATURE" ColumnName="DOWNCOIL_TEMPERATURE" />
+                <ScalarProperty Name="INTERNAL_DIAMETER" ColumnName="INTERNAL_DIAMETER" />
+                <ScalarProperty Name="EXTERNAL_DIAMETER" ColumnName="EXTERNAL_DIAMETER" />
+                <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+                <ScalarProperty Name="LENGTH" ColumnName="LENGTH" />
+                <ScalarProperty Name="ACTUAL_THICKNESS" ColumnName="ACTUAL_THICKNESS" />
+                <ScalarProperty Name="AIMING_THICKNESS" ColumnName="AIMING_THICKNESS" />
+                <ScalarProperty Name="THICKNESS" ColumnName="THICKNESS" />
+                <ScalarProperty Name="ACTUAL_WIDTH" ColumnName="ACTUAL_WIDTH" />
+                <ScalarProperty Name="AIMING_WIDTH" ColumnName="AIMING_WIDTH" />
+                <ScalarProperty Name="WIDTH" ColumnName="WIDTH" />
+                <ScalarProperty Name="HEAT_DATE" ColumnName="HEAT_DATE" />
+                <ScalarProperty Name="LEVEL3_ID" ColumnName="LEVEL3_ID" />
+                <ScalarProperty Name="COIL_CODE" ColumnName="COIL_CODE" />
+                <ScalarProperty Name="LOT_ID" ColumnName="LOT_ID" />
+                <ScalarProperty Name="HEAT_ID" ColumnName="HEAT_ID" />
+                <ScalarProperty Name="COMBINATION_ID" ColumnName="COMBINATION_ID" />
+                <ScalarProperty Name="COIL_SEQ" ColumnName="COIL_SEQ" />
+                <ScalarProperty Name="COIL_ID" ColumnName="COIL_ID" />
+                <ScalarProperty Name="JOB_ID" ColumnName="JOB_ID" />
+                <ScalarProperty Name="COIL_NO" ColumnName="COIL_NO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

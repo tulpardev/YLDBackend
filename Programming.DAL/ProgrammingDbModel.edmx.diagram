@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="ProgrammingDbModel.Languages" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgrammingDbModel.MSG_PROD_COIL" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgrammingDbModel.Users" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgrammingDbModel.FPL_INPUT_COIL" Width="1.5" PointX="5.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

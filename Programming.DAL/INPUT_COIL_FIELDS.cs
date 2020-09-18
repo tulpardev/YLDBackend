@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Programming.DAL
 {
     public class INPUT_COIL_FIELDS
@@ -15,6 +10,7 @@ namespace Programming.DAL
         public int COIL_NO { get; set; }
         public string COIL_ID { get; set; }
         public int COIL_SEQ { get; set; }
+        public string JOB_ID { get; set; }
         public string MATERIAL_GRADE_ID { get; set; }
         public decimal WIDTH { get; set; }
         public decimal LENGTH { get; set; }
@@ -24,7 +20,6 @@ namespace Programming.DAL
         public int STATUS { get; set; }
         public Nullable<System.DateTime> CREATION_DATE { get; set; }
 
-        //public string JOB_ID { get; set; }
         //public string COMBINATION_ID { get; set; }
         //public string HEAT_ID { get; set; }
         //public string LOT_ID { get; set; }

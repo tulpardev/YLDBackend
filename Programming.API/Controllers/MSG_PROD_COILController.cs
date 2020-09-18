@@ -8,7 +8,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Newtonsoft.Json;
 using Programming.DAL;
 using Programming.DAL.Models;
 using Programming.DAL.Utilities;

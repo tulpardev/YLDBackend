@@ -37,6 +37,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="SimpleCrypto, Version=26.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleCrypto.0.3.30.26\lib\SimpleCrypto.dll</HintPath>
     </Reference>
@@ -53,10 +56,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FPL_INPUT_COIL.cs">
+      <DependentUpon>ProgrammingDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputCoilDAL.cs" />
+    <Compile Include="INPUT_COIL_FIELDS.cs" />
     <Compile Include="Languages.cs">
       <DependentUpon>ProgrammingDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LanguagesDAL.cs" />
+    <Compile Include="Models\Pagination.cs" />
     <Compile Include="MSG_PROD_COIL.cs">
       <DependentUpon>ProgrammingDbModel.tt</DependentUpon>
     </Compile>
@@ -77,22 +86,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProgrammingDbModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users.cs">
       <DependentUpon>ProgrammingDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UsersDAL.cs" />
+    <Compile Include="Utilities\ExpressionFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>
     <Compile Include="BaseDAL.cs" />
-    <None Include="packages.config" />
     <EntityDeploy Include="ProgrammingDbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ProgrammingDbModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="packages.config" />
     <None Include="ProgrammingDbModel.edmx.diagram">
       <DependentUpon>ProgrammingDbModel.edmx</DependentUpon>
     </None>
@@ -111,6 +120,9 @@
       <DependentUpon>ProgrammingDbModel.edmx</DependentUpon>
       <LastGenOutput>ProgrammingDbModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
