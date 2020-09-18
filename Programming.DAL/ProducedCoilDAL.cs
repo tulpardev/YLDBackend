@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
+using System.ComponentModel;
+using Programming.DAL.Utilities;
+using Programming.DAL.Models;
 
 namespace Programming.DAL
 {
@@ -35,5 +40,56 @@ namespace Programming.DAL
             }).OrderByDescending(x => x.MSG_COUNTER).Skip(size * count).Take(size);
             return result;
         }
-    }   
+
+        public IQueryable<MSG_PROD_COIL_FIELDS> GetProducedCoilFieldsById(int Id)
+        {
+            var fieldsTable = db.MSG_PROD_COIL.Where(x =>  x.MSG_COUNTER==Id).Select(q => new MSG_PROD_COIL_FIELDS
+            {
+                UPCOAT_WEIGHT_AVG=q.UPCOAT_WEIGHT_AVG,
+                UPCOAT_WEIGHT_MIN=q.UPCOAT_WEIGHT_MIN,
+                UPCOAT_WEIGHT_MAX=q.UPCOAT_WEIGHT_MAX,
+                REMARK= q.REMARK
+            });
+            return fieldsTable;
+        }
+
+        public bool UpdateProducedCoilsFields(int id, MSG_PROD_COIL mSG_PROD_COIL)
+        {
+           
+            try
+            {
+                var dbModel = db.MSG_PROD_COIL.Where(q => q.EX_COIL_ID == mSG_PROD_COIL.EX_COIL_ID).OrderByDescending(q => q.MSG_COUNTER).FirstOrDefault();
+                dbModel.UPCOAT_WEIGHT_AVG = mSG_PROD_COIL.UPCOAT_WEIGHT_AVG;
+                dbModel.UPCOAT_WEIGHT_MIN = mSG_PROD_COIL.UPCOAT_WEIGHT_MIN;
+                dbModel.UPCOAT_WEIGHT_MAX = mSG_PROD_COIL.UPCOAT_WEIGHT_MAX;
+                dbModel.REMARK = mSG_PROD_COIL.REMARK;
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool IsThereAnyMsgCounter(int id)
+        {
+            return db.MSG_PROD_COIL.Any(x => x.MSG_COUNTER == id);
+        }
+
+        public IEnumerable<MSG_PROD_COIL> GetProducedCoilWithFilter(Pagination pagination)
+        {
+            var ef = new ExpressionFilter();
+            var query = ef.GetDynamicQueryWithExpresionTrees<MSG_PROD_COIL>(pagination.FilterQuery);
+            var data = db.MSG_PROD_COIL.ToList().Select(q =>
+            {
+                q.EX_COIL_ID = q.EX_COIL_ID.Trim();
+                q.SCHEDULE_ID = q.SCHEDULE_ID.Trim();
+                return q;
+            });
+            var filteredData = data.AsQueryable().Where(query).OrderByDescending(x => x.MSG_COUNTER).Skip(pagination.PageSize * pagination.PageCount).Take(pagination.PageSize).ToList();
+
+            return filteredData;
+        }
+    }
 }

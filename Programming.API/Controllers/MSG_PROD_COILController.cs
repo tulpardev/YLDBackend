@@ -8,7 +8,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using Newtonsoft.Json;
 using Programming.DAL;
+using Programming.DAL.Models;
+using Programming.DAL.Utilities;
+using static Programming.DAL.Utilities.ExpressionFilter;
 
 namespace Programming.API.Controllers
 {
@@ -39,16 +43,64 @@ namespace Programming.API.Controllers
 
             return Ok(producedCoil);
         }
-
+        
 
         [HttpGet]
         [Route("homepage/api/MSG_PROD_COIL")]
         public IHttpActionResult GetProdCoil(int count,int size )
         {
-            var akif = producedCoilDAL.GetProducedCoilForTable(size,count);
-            return Ok(akif.ToList());
+            var result = producedCoilDAL.GetProducedCoilForTable(size,count);
+            return Ok(result.ToList());
         }
-        
+
+        [HttpGet]
+        [Route("homepage/api/MSG_PROD_COIL")]
+        public IHttpActionResult GetProdCoil(int Id)
+        {
+            var result = producedCoilDAL.GetProducedCoilFieldsById(Id);
+            return Ok(result.ToList());
+        }
+
+        [HttpPut]
+        [Route("homepage/api/MSG_PROD_COIL")]
+        public IHttpActionResult Put(int id, MSG_PROD_COIL mSG_PROD_COIL)
+        {
+
+            if (producedCoilDAL.IsThereAnyMsgCounter(id) == false)
+            {
+                return NotFound();
+            }
+
+            else if (ModelState.IsValid == false)
+            {
+                return BadRequest();
+            }
+
+            else
+            {
+                var res = producedCoilDAL.UpdateProducedCoilsFields(id, mSG_PROD_COIL);
+                if (res)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest();
+                }
+               
+            }
+        }
+
+      
+
+        [HttpPost]
+        [Route("homepage/api/MSG_PROD_COIL")]
+        public IHttpActionResult GetProducedCoilByFilter(Pagination pagination)
+        {
+            var item = producedCoilDAL.GetProducedCoilWithFilter(pagination);
+            return Ok(item);
+        }
+
     }
 }
 
